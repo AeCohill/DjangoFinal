@@ -1,0 +1,33 @@
+<!-- invoice_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice List</title>
+</head>
+<body>
+    <h1>Invoice List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Invoice ID</th>
+                <th>Customer Name</th>
+                <th>Total Cost</th>
+                <th>View Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for invoice in invoices %}
+            <tr>
+                <td>{{ invoice.invoice_id }}</td>
+                <td>{{ invoice.customer.name }}</td>
+                <td>{{ invoice.cost }}</td>
+                <td><a href="{% url 'view_invoice' invoice.invoice_id %}">View Details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

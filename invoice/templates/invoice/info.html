@@ -1,111 +1,63 @@
-##Make these two files compatible
-
-<html lang="en">  
-<head>  
+<html lang="en">
+<head>
     <title>Lumber Company</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="final.css">
-    <meta name ="description" content ="This webpage is to provide information about invoices for the company " >
+    <meta name="description" content="This webpage is to provide information about invoices for the company">
 </head>
-      
-        
-            <header><h1><a href="index.html">Lumber Business</a></h1></header>
-    
-       <nav>
+<body>
+    <header>
+        <h1><a href="info.html">Invoices</a></h1>
+    </header>
+
+    <nav>
         <ul>
-        <li> <a href="index.html">Home</a></li>
-       <li> <a href="basics.html">Services</a></li>
-       <li><a href="info.html">Quote</a></li> 
+            <li><a href="info.html">Enter an Invoice</a></li>
+            <li><a href="invoice_list.html">Current Invoices</a></li>
         </ul>
-       </nav>
-       <div id="wrapper">
-       <br>
-       
-       <main>
-       
-        <h2>~ Get a Services Price Quote ~</h2>
-        <h3>Client Information:</h3>
-        <p>Required fields are marked with an asterisk*</p>
-        <form action=" https://www.logstolumberindy.com/" method="post"> 
+    </nav>
 
-
-            <label for="firstName">*First Name: </label>
-            <input type="text" name="firstName" id="myfirstName" required="required"></input>
-
-            <label for="lastName">*Last Name: </label>
-            <input type="text" name="lastName" id="mylastName" required="required"></input>
-
-            <label for="email">*Email: </label>
-            <input type="email" name="email" id="myemail" required="required"></input>
-
-            <label for="phone">*Phone: </label>
-            <input type="number" name="phone" id="myphone" maxlength="12"></input>
-
-            <label for="address">Mailing Address: </label>
-            <input type="text" name="address" id="address" required="required"></input>
-
-            <label for="service">*Service: </label>
-            <input type="service" name="service" id="myservice" required="required"></input>
-
-            <br> 
-
-            <fieldset>
-                <legend>How would you prefer to be contacted: </legend>
-              
-                <div>
-                  <input type="checkbox" id="text" name="text" />
-                  <label for="text">Text</label>
-                </div>
-              
-                <div>
-                  <input type="checkbox" id="email" name="email" />
-                  <label for="email">Email</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" id="emailtext" name="emailtext" />
-                    <label for="emaoltext">Email and Text</label>
-                  </div>
-              </fieldset>
-            <br>
-
-
-            <label for="comments">Additional Information: </label>
-            <textarea name="comments" rows="8" cols="30"></textarea>
-            <br>
-            <script>
-                function promptQ() {
-                    var string; 
-                    string = prompt('Please type "Submit" to send your information to our Lumber Business: ');
-                    if (string != "Submit") {
-                        alert("Please try again - information not submitted");
-                    }
-                    else {
-                        alert("Thank you for sending your information - we will get back to you ASAP!");
-                    }
-                }
-            </script>
-            <button onclick="promptQ();">Click to Submit</button>
-           <br>
-
-        </form>
-       
-       <br>
-        
-
+    <div id="wrapper">
         <br>
         
-     </main>
-   <footer>Copyright &copy; 2024 Lumber Company<br><a href="">FakeEmailForCompany@gmail.com</a><div>
-    <script>
-         document.write("Last Update: " + document.lastModified) ;
-       
-       
-    </script>
+        <main>
+            <h2>~ Enter a Service Invoice ~</h2>
+            <h3>Client Information:</h3>
+            <form action="{% url 'submit_invoice' %}" method="post">
+                {% csrf_token %}
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" id="myfirstName" required="required">
+                <br>
+            
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="mylastName" required="required">
+                <br>
+            
+                <label for="address">Address:</label>
+                <input type="text" name="address" id="address" required="required">
+                <br>
+            
+                <label for="service">Service:</label>
+                <input type="text" name="service" id="myservice" required="required">
+                <br>
+            
+                <button type="submit">Submit</button>
+            </form>
+            <br>
+            <br>
+        </main>
+
+        <footer>
+            Copyright &copy; 2024 Lumber Company<br>
+            <a href="">FakeEmailForCompany@gmail.com</a>
+            <div>
+                <script>
+                    document.write("Last Update: " + document.lastModified);
+                </script>
+            </div>
+        </footer>
     </div>
-</footer>
-    </div>
-   </body>
+</body>
 </html>
 

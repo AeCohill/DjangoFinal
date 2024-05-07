@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from invoice import views as invoice_views  # Assuming views are in the invoice app
+from invoice import views as invoice_views
 
 urlpatterns = [
-    path('', invoice_views.info_view, name='home'),
+    path('', invoice_views.invoice_list_view, name='invoice_list'),  # Use views.invoice_list_view for the root URL
+    path('submit_invoice/', invoice_views.submit_invoice, name='submit_invoice'),
     path('admin/', admin.site.urls),
-    path('info.html', invoice_views.info_view, name='info'),  # Add this line
+    path('info.html', invoice_views.info_view, name='info'),
+    path('invoice_list.html', invoice_views.invoice_list_view, name='invoice_list') 
 ]

@@ -18,9 +18,10 @@ from django.urls import path
 from invoice import views as invoice_views
 
 urlpatterns = [
-    path('', invoice_views.invoice_list_view, name='invoice_list'),  # Use views.invoice_list_view for the root URL
-    path('submit_invoice/', invoice_views.submit_invoice, name='submit_invoice'),
-    path('admin/', admin.site.urls),
+    path('submit_invoice/info.html', invoice_views.info_view, name='info'),
+    path('', invoice_views.invoice_list_view, name='invoice_list'),  # URL for the invoice list view
+    path('submit_invoice/', invoice_views.submit_invoice, name='submit_invoice'),  # URL for submitting an invoice
     path('info.html', invoice_views.info_view, name='info'),
-    path('invoice_list.html', invoice_views.invoice_list_view, name='invoice_list') 
+    path('invoice_list.html', invoice_views.invoice_list, name='invoice_list_html'),
+    
 ]

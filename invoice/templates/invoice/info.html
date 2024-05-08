@@ -27,11 +27,11 @@
             <form action="{% url 'submit_invoice' %}" method="post">
                 {% csrf_token %}
                 <label for="firstName">First Name:</label>
-                <input type="text" name="firstName" id="myfirstName" required="required">
+                <input type="text" name="first_name" id="myfirstName" required="required">
                 <br>
             
                 <label for="lastName">Last Name:</label>
-                <input type="text" name="lastName" id="mylastName" required="required">
+                <input type="text" name="last_name" id="mylastName" required="required">
                 <br>
             
                 <label for="address">Address:</label>
@@ -47,7 +47,7 @@
             <br>
             <br>
         </main>
-
+        
         <footer>
             Copyright &copy; 2024 Lumber Company<br>
             <a href="">FakeEmailForCompany@gmail.com</a>

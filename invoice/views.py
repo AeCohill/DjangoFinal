@@ -1,10 +1,7 @@
-from django.shortcuts import render, redirect
-from .forms import InvoiceForm
 from django.db import models
 from .models import Invoice
 from django.shortcuts import render, redirect
 from .forms import InvoiceForm
-from .models import Invoice
 
 def submit_invoice(request):
     if request.method == 'POST':

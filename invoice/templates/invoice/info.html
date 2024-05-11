@@ -3,7 +3,7 @@
     <title>Lumber Company</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="invoice.css">
+    <link rel="stylesheet" href="static/invoice/css/invoice.css">
     <meta name="description" content="This webpage is to provide information about invoices for the company">
 </head>
 <body>
@@ -25,7 +25,7 @@
             <h2>~ Enter a Service Invoice ~</h2>
           
             <h3>Client Information:</h3>
-            <form action="{% url 'submit_invoice' %}" method="post">
+            <form action="{% url 'submit_invoice' %}" method="POST">
                 {% csrf_token %}
                 <label for="firstName">First Name:</label>
                 <input type="text" name="first_name" id="myfirstName" required="required">
@@ -40,11 +40,11 @@
                 <br>
                 
                 <label for="service">Service:</label>
-                <input type="text" name="Service" id="myService" required="required">
+                <input type="text" name="service" id="myService" required="required">
                 <br>  
                 
-                <label for="Price">Price:</label>
-                <input type="text" name="Price" id="myPrice" required="required">
+                <label for="price">Price:</label>
+                <input type="text" name="price" id="myPrice" required="required">
                 <br>      
 
                 <!-- document.getElementById('updates').addEventListener('change', function() {

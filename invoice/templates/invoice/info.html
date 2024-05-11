@@ -3,7 +3,7 @@
     <title>Lumber Company</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="invoice.css">
     <meta name="description" content="This webpage is to provide information about invoices for the company">
 </head>
 <body>
@@ -23,6 +23,7 @@
         
         <main>
             <h2>~ Enter a Service Invoice ~</h2>
+          
             <h3>Client Information:</h3>
             <form action="{% url 'submit_invoice' %}" method="post">
                 {% csrf_token %}
@@ -37,9 +38,34 @@
                 <label for="address">Address:</label>
                 <input type="text" name="address" id="address" required="required">
                 <br>
-            
+                
                 <label for="service">Service:</label>
-                <input type="text" name="service" id="myservice" required="required">
+                <input type="text" name="Service" id="myService" required="required">
+                <br>  
+                
+                <label for="Price">Price:</label>
+                <input type="text" name="Price" id="myPrice" required="required">
+                <br>      
+
+                <!-- document.getElementById('updates').addEventListener('change', function() {
+                    var selectedOption = this.value;
+                    if (selectedOption === 'text') {
+                        // Perform action for text option
+                        console.log('Text option selected');
+                    } else if (selectedOption === 'email') {
+                        // Perform action for email option
+                        console.log('Email option selected');
+                    } else if (selectedOption === 'emailtext') {
+                        // Perform action for emailtext option
+                        console.log('Email and Text option selected');
+                    } else {
+                        // Handle default or invalid option
+                        console.log('Please select an option');
+                    }
+                });
+                 -->
+                
+
                 <br>
             
                 <button type="submit">Submit</button>

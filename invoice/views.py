@@ -15,7 +15,8 @@ def submit_invoice(request):
                 first_name=form.cleaned_data['first_name'],
                 last_name=form.cleaned_data['last_name'],
                 address=form.cleaned_data['address'],
-                service=form.cleaned_data['service']
+                service=form.cleaned_data['service'],
+                price=form.cleaned_data['price']
             )
             
             new_invoice.save()

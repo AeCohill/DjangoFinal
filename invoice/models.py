@@ -6,7 +6,7 @@ class Invoice(models.Model):
     first_name = models.CharField(max_length=100, null=True)
     last_name = models.CharField(max_length=100, null=True)
     address = models.CharField(max_length=200, null=True)
-    service = models.CharField(max_length=100, null=True)
-
+    service = models.CharField(max_length=100,  null=True)
+    price = models.CharField(max_length=200, null=True)
     def __str__(self):
         return f"Invoice #{self.invoice_id}: {self.first_name} {self.last_name}"

@@ -5,17 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="invoice.css">
     <title>Invoice List</title>
 </head>
+<header>
+    <h1><a href="info.html">Invoices</a></h1>
+</header>
+
 <nav>
-        <ul>
-            <li><a href="info.html">Enter an Invoice</a></li>
-            <li><a href="invoice_list.html">Current Invoices</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="info.html">Enter an Invoice</a></li>
+        <li><a href="invoice_list.html">Current Invoices</a></li>
+    </ul>
+</nav>
+
+<div id="wrapper">
+
 <body>
-    <h1>Invoice List</h1>
-    <table border="1">
+    <h2>~ Invoice List ~ </h2>
+    <table id="table"  border="1">
         <thead>
             <tr>
                 <th>Invoice ID</th>
@@ -23,6 +31,8 @@
                 <th>Last Name</th>
                 <th>Address</th>
                 <th>Service</th>
+                <th>Price</th>
+
             </tr>
         </thead>
         <tbody>
@@ -33,9 +43,43 @@
                 <td>{{ invoice.last_name }}</td>
                 <td>{{ invoice.address }}</td>
                 <td>{{ invoice.service }}</td>
+                <td>{{ invoice.price }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+    Copyright &copy; 2024 Lumber Company<br>
+    <a href="">FakeEmailForCompany@gmail.com</a>
+    <div>
+        <script>
+            document.write("Last Update: " + document.lastModified);
+        </script>
+    </div>
+</footer>
+
+
+</div>
+
 </html>
